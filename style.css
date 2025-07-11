@@ -4,3 +4,221 @@
     box-sizing: border-box;
     font-family: 'Courier New', Courier, monospace;
 }
+
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: red;
+    padding: 20px;
+    position: sticky; /*  not change the position of the navigation panel. top :0  is also wanted*/
+    top: 0;
+}
+
+#menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style-type: none;
+}
+
+#menu li {
+    margin-right: 15px;
+    padding: 15px;
+    transition: all 0.3s ease-in;
+    cursor: pointer;
+}
+
+#menu li:last-child {
+    margin-right: 0px;
+}
+
+#menu li:hover {
+    background-color: green;
+}
+
+#menu a {
+    text-decoration: none;
+    font-size: 1rem;
+    color: #000;
+}
+
+/*Media Qurey */
+@media screen and (max-width: 550px) {
+    body {
+        background-color: lightgreen;
+    }
+
+
+    #header,
+    #menu {
+        flex-direction: column;
+    }
+
+    #menu li {
+        margin-right: 0;
+    }
+}
+.t1{
+    margin-top: 50px;
+    text-align: center;
+}
+.p1{
+    background-color: rgb(161, 163, 167);
+    padding: 20px;
+    border-radius: 20px;
+
+
+    
+}
+.btn{
+    margin: 10px 15px;
+    width: 150px;
+    height: 40px;
+    border: none;
+    cursor: pointer;
+    color: aliceblue;
+    background-color: #000;
+}
+.btn:hover{
+    background-color: rgb(219, 54, 150);
+
+}
+.row{
+    width: 100%;
+    margin: auto; 
+    padding: 0;
+}
+
+.block{
+    float: left;
+    width: 30.33%;
+    border: 1px #000 solid;
+    padding: 10px;
+    box-sizing: border-box;
+    margin: 10px 1.5%;
+}
+
+.clear{
+    clear: both;
+}
+.index{
+    color: red;
+    position: absolute;
+    z-index: 1; /* position : absolute and z-index useing we can change text backward or forward.z-index is use to forword text  */
+}
+.iu li:last-child{
+    background-color: brown;
+}
+.iu li:first-child{
+    background-color: cornflowerblue;
+}
+
+
+/* Adjacent Silbing Combinator*/
+h2 + p{ /* after the adj class first p tag is included this styles*/
+
+    font-size: 20px;
+}
+
+
+/* Child Combinator*/
+.adj >p{ 
+    color: blue;
+}
+
+
+/* General Sibling Combinator*/
+h2 ~p{ /* after the h2 tag all p tags are applied this styles */
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-style: italic;
+}
+
+.bt1{
+    font-size: larger;
+    font-family: 'Times New Roman', Times, serif;
+    padding:10px;
+    border-radius:20px;
+
+/* psudo class*/    
+}
+.bt1:hover{ /* mouse pointer is on the button change the butoons color*/
+    background-color: rgb(247, 51, 230);
+}
+
+.bt1:active{ /* on click time this buttons color change */
+    background-color: aquamarine;
+}
+
+.bt1:visited{ /* after the visited other page this button color is change color*/
+    background-color: rgb(52, 39, 224);
+}
+
+input[type="text"]:focus{
+    background-color: green;
+}
+
+input[type="email"] :disabled{
+    background-color: black;
+}
+
+input[type="checkbox"]:checked +p{
+    background-color: brown;
+}
+
+.box{
+    background-color: white;
+    height: 200px;
+    width: 200px;
+    position: relative; /* we can change the position of box useing top bottom left right functions*/
+    animation-name: sampleanimation;
+    animation-duration: 4s;
+    /* animation-delay :5s*/
+    /* animation -direction :alternate-reverse;*/
+    animation-timing-function :ease-out; /*start the animation fast and stop it slowly */
+    animation-iteration-count: infinite; /* how many times run the animation*/
+.box:hover{
+        /* transform: :rotate(180deg) rotateY() rotateX(180deg) rotateZ(180deg);  rotate the box Y,X,Z axis*/
+}
+    
+}
+
+@keyframes sampleanimation{
+    0%{
+        background-color: #c9bcbc;
+        left: 0px;
+        top: 0px;
+        border-radius: 0;
+        opacity: 0.1;
+        
+    }25%{
+        background-color: coral;
+        left :0px;
+        top :250px;
+        border-radius: 10%;
+        opacity: 0.3;
+        
+    }50%{
+        background-color: crimson;
+        left :250px;
+        top :250px;
+        border-radius: 25%;
+        opacity: 0.6;
+        
+    }75%{
+        background-color: darkorchid;
+        left :250px;
+        top :0px;
+        border-radius: 37%;
+        opacity: 0.9;
+        
+    }
+    100%{
+        background-color: fff;
+        left :0px;
+        top :0px;
+        border-radius: 50%;
+        opacity: 1;
+        
+    }
+}
